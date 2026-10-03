@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>IT Seminar Registration</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <main class="container">
+    <h1>IT Seminar Registration</h1>
+    <p>Register for the upcoming university IT seminar.</p>
+
+    <form id="registrationForm" novalidate>
+      <div class="field">
+        <label for="fullName">Full name</label>
+        <input type="text" id="fullName" name="fullName"
+               aria-describedby="fullNameError">
+        <div id="fullNameError" class="error" role="alert"></div>
+      </div>
+
+      <div class="field">
+        <label for="studentNumber">Student number</label>
+        <input type="text" id="studentNumber" name="studentNumber"
+               aria-describedby="studentNumberError"
+               placeholder="24-1234-123">
+        <div id="studentNumberError" class="error" role="alert"></div>
+      </div>
+
+      <div class="field">
+        <label for="email">Email address</label>
+        <input type="email" id="email" name="email"
+               aria-describedby="emailError">
+        <div id="emailError" class="error" role="alert"></div>
+      </div>
+
+      <div class="field">
+        <label for="mobileNumber">Mobile number</label>
+        <input type="tel" id="mobileNumber" name="mobileNumber"
+               aria-describedby="mobileNumberError"
+               placeholder="09171234567 or +639171234567">
+        <div id="mobileNumberError" class="error" role="alert"></div>
+      </div>
+
+      <div class="field">
+        <label for="password">Password</label>
+        <input type="password" id="password" name="password"
+               aria-describedby="passwordError passwordFeedback">
+        <div id="passwordFeedback" class="feedback" aria-live="polite"></div>
+        <div id="passwordError" class="error" role="alert"></div>
+      </div>
+
+      <div class="field">
+        <label for="confirmPassword">Confirm password</label>
+        <input type="password" id="confirmPassword" name="confirmPassword"
+               aria-describedby="confirmPasswordError">
+        <div id="confirmPasswordError" class="error" role="alert"></div>
+      </div>
+
+      <div class="field">
+        <label for="course">Course</label>
+        <select id="course" name="course" aria-describedby="courseError">
+          <option value="">Select your course.</option>
+          <option value="BSIT">BSIT</option>
+          <option value="BSCS">BSCS</option>
+        </select>
+        <div id="courseError" class="error" role="alert"></div>
+      </div>
+
+      <div class="checkbox-field">
+        <input type="checkbox" id="terms" name="terms"
+               aria-describedby="termsError">
+        <label for="terms">I agree to the terms and conditions.</label>
+      </div>
+      <div id="termsError" class="error" role="alert"></div>
+
+      <div class="buttons">
+        <button type="submit" id="registerBtn">Register</button>
+        <button type="reset" id="resetBtn">Reset</button>
+      </div>
+    </form>
+
+    <div id="successMessage" class="success" role="status" aria-live="polite"></div>
+
+    <section id="registrationSummary" class="summary" aria-live="polite" hidden>
+      <h2>Registration Summary</h2>
+      <p><strong>Full name:</strong> <span id="summaryName"></span></p>
+      <p><strong>Student number:</strong> <span id="summaryStudentNumber"></span></p>
+      <p><strong>Email address:</strong> <span id="summaryEmail"></span></p>
+      <p><strong>Mobile number:</strong> <span id="summaryMobileNumber"></span></p>
+      <p><strong>Course:</strong> <span id="summaryCourse"></span></p>
+    </section>
+  </main>
+
+  <script src="js/app.js"></script>
+</body>
+</html>
